@@ -1,4 +1,4 @@
-# FunWithDSA
+# Fun With Data Structures and Algorithms
 Playing with Data Structures and Algorithms
 
 ## Data Structure
