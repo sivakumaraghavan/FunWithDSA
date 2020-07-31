@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,12 +10,77 @@ namespace Algorithms.Sorting
         public QuickSort()
         {
             Console.WriteLine("Enter the elements of an array (space separated)");
-            var input = Console.ReadLine();
-            string[] sInput = input.Split(' ');
-            int[] iInput = Array.ConvertAll(sInput, int.Parse);
+            int[] iInput = Util.GetArrayElements();
 
-            Console.WriteLine("******Quick Sort*******");
+            Console.WriteLine("\n******Quick Sort*******");
 
+            QuickSortNow(iInput, 0, iInput.Length - 1);
+
+            Console.WriteLine("Array after quick sort");
+            Util.PrintArray(iInput);
+
+            Console.ReadLine();
+        }
+
+        private void QuickSortNow(int[] unsortedArray, int low, int high)
+        {
+            if (low <= high)
+            {
+                int pivot = PartitionArrayByChoosingLastELementAsPivot(unsortedArray, low, high);
+
+                QuickSortNow(unsortedArray, low, pivot - 1);
+                QuickSortNow(unsortedArray, pivot + 1, high);
+            }
+        }
+
+        private int PartitionArrayByChoosingLastELementAsPivot(int[] unSortedArray, int low, int high)
+        {
+            int pivotElement = unSortedArray[high];
+            int pivotIndex = low;
+            int temp;
+
+            for (int i = low; i < high; i++)
+            {
+                if (unSortedArray[i] < pivotElement)
+                {
+                    temp = unSortedArray[pivotIndex];
+                    unSortedArray[pivotIndex] = unSortedArray[i];
+                    unSortedArray[i] = temp;
+
+                    pivotIndex++;
+                }
+            }
+
+            temp = unSortedArray[pivotIndex];
+            unSortedArray[pivotIndex] = unSortedArray[high];
+            unSortedArray[high] = temp;
+
+            return pivotIndex;
+        }
+
+        private int PartitionArrayByChoosingFirstELementAsPivot(int[] unSortedArray, int low, int high)
+        {
+            int pivotElement = unSortedArray[low];
+            int pivotIndex = low;
+            int temp;
+
+            for (int i = low + 1; i <= high; i++)
+            {
+                if (unSortedArray[i] < pivotElement)
+                {
+                    pivotIndex++;
+
+                    temp = unSortedArray[pivotIndex];
+                    unSortedArray[pivotIndex] = unSortedArray[i];
+                    unSortedArray[i] = temp;
+                }
+            }
+
+            temp = unSortedArray[pivotIndex];
+            unSortedArray[pivotIndex] = unSortedArray[low];
+            unSortedArray[low] = temp;
+
+            return pivotIndex;
         }
     }
 }

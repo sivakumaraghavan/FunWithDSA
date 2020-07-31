@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,15 +10,13 @@ namespace Algorithms.Searching
         public BinarySearch()
         {
             Console.WriteLine("Enter the elements for sorted array (space separated)");
-            var input = Console.ReadLine();
-            string[] sInput = input.Split(' ');
-            int[] iInput = Array.ConvertAll(sInput, int.Parse);
+            int[] sortedArray = Util.GetArrayElements();
 
             Console.WriteLine("Enter the element to search");
             int element = int.Parse(Console.ReadLine());
 
             Console.WriteLine("******Binary search*******");
-            int result = BinarySearchNow(iInput, 0, iInput.Length, element);
+            int result = BinarySearchNow(sortedArray, 0, sortedArray.Length, element);
 
             if (result == -1)
                 Console.WriteLine("Element not found");
