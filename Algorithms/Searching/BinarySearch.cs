@@ -1,7 +1,5 @@
 ﻿using Algorithms.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Algorithms.Searching
 {
