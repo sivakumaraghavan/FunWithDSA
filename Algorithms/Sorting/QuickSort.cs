@@ -3,7 +3,7 @@ using System;
 
 namespace Algorithms.Sorting
 {
-    class QuickSort
+    public class QuickSort
     {
         public QuickSort()
         {
@@ -18,6 +18,11 @@ namespace Algorithms.Sorting
             Util.PrintArray(iInput);
 
             Console.ReadLine();
+        }
+
+        public QuickSort(int[] unSortedArray)
+        {
+            QuickSortNow(unSortedArray, 0, unSortedArray.Length - 1);
         }
 
         private void QuickSortNow(int[] unsortedArray, int low, int high)

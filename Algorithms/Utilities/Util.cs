@@ -4,6 +4,10 @@ namespace Algorithms.Utilities
 {
     public static class Util
     {
+        public static int GetIntegerValue()
+        {
+            return int.Parse(Console.ReadLine());
+        }
         public static int[] GetArrayElements()
         {
             var input = Console.ReadLine();

@@ -8,7 +8,7 @@ namespace Algorithms.Recursion
         {
             Console.WriteLine("Enter the number to find factorial and fibonacci using recursion");
 
-            int number = int.Parse(Console.ReadLine());
+            int number = Utilities.Util.GetIntegerValue();
 
             Console.WriteLine("Recursion --> Factorial");
             Console.WriteLine(Factorial(number));

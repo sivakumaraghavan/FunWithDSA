@@ -11,7 +11,7 @@ namespace Algorithms.Searching
             int[] sortedArray = Util.GetArrayElements();
 
             Console.WriteLine("Enter the element to search");
-            int element = int.Parse(Console.ReadLine());
+            int element = Util.GetIntegerValue();
 
             Console.WriteLine("******Binary search*******");
             int result = BinarySearchNow(sortedArray, 0, sortedArray.Length, element);
@@ -21,6 +21,7 @@ namespace Algorithms.Searching
             else
                 Console.WriteLine("Element found at index {0}", result);
         }
+
         private int BinarySearchNow(int[] sortedArray, int low, int high, int element)
         {
             if (high >= low)
