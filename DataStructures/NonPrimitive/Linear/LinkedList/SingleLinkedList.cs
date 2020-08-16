@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures.NonPrimitive.Linear.LinkedList
 {
-    public class LinkedList
+    public class SingleLinkedList
     {
         Node head;
 
-        public LinkedList()
+        public SingleLinkedList()
         {
             Console.WriteLine("\n*****Linked List*****");
 
             Append(10);
             Append(25);
-            Prepend(5);
-            Delete(25);
+            Append(5);
+            Append(45);
+            Delete(45);
             Print();
         }
 
@@ -64,12 +63,13 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
             if(head.data == data)
             {
                 head = head.next;
+                return;
             }
 
             Node currentNode = head;
             while(currentNode.next != null)
             {
-                if (currentNode.next.data == data)
+                if(currentNode.next.data == data)
                 {
                     currentNode.next = currentNode.next.next;
                     return;
