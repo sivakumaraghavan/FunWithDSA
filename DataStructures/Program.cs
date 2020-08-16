@@ -1,4 +1,6 @@
 ﻿using System;
+using DataStructures.NonPrimitive.Linear.Array;
+using DataStructures.NonPrimitive.Linear.LinkedList;
 
 namespace DataStructures
 {
@@ -6,7 +8,11 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Arrays array = new Arrays();
+            //LinkedList ll = new LinkedList();
+            //DoubleLinkedList dll = new DoubleLinkedList();
+
+           Console.ReadKey();
         }
     }
 }

@@ -11,4 +11,18 @@
     <None Remove="NewFolder\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NonPrimitive\Linear\Queue\" />
+    <Folder Include="NonPrimitive\Linear\Stack\" />
+    <Folder Include="NonPrimitive\NonLinear\Graph\" />
+    <Folder Include="NonPrimitive\NonLinear\Tree\" />
+    <Folder Include="Primitive\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Algorithms">
+      <HintPath>..\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
