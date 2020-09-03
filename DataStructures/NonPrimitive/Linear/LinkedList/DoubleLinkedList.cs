@@ -33,6 +33,7 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
 
             newNode.next = head;
             newNode.prev = null;
+            head.prev = newNode;
             head = newNode;
         }
 
@@ -118,6 +119,7 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
         public DoubleLinkedList()
         {
             Prepend(10);
+            Prepend(95);
             Append(15);
             Append(25);
             Append(45);

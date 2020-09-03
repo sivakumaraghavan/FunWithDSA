@@ -6,18 +6,6 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
     {
         Node head;
 
-        public SingleLinkedList()
-        {
-            Console.WriteLine("\n*****Linked List*****");
-
-            Append(10);
-            Append(25);
-            Append(5);
-            Append(45);
-            Delete(45);
-            Print();
-        }
-
         public class Node
         {
             public int data;
@@ -83,9 +71,21 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
             Node currentNode = head;
             while(currentNode != null)
             {
-                Console.Write(currentNode.data + "-->");
+                Console.Write(currentNode.data + " ");
                 currentNode = currentNode.next;
             }
+        }
+
+        public SingleLinkedList()
+        {
+            Console.WriteLine("\n*****Linked List*****");
+
+            Append(10);
+            Append(25);
+            Append(5);
+            Append(45);
+            Delete(45);
+            Print();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DataStructures
         static void Main(string[] args)
         {
             //Arrays array = new Arrays();
-            SingleLinkedList ll = new SingleLinkedList();
+            //SingleLinkedList ll = new SingleLinkedList();
             //DoubleLinkedList dll = new DoubleLinkedList();
 
            Console.ReadKey();
