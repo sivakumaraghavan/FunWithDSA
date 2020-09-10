@@ -68,12 +68,21 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
 
         public void Print()
         {
+            Console.WriteLine("Values of linked list");
             Node currentNode = head;
             while(currentNode != null)
             {
                 Console.Write(currentNode.data + " ");
                 currentNode = currentNode.next;
             }
+        }
+
+        public void PrintReverse(Node head)
+        {
+            if (head.next != null)
+                PrintReverse(head.next);
+
+            Console.Write(head.data+" ");
         }
 
         public SingleLinkedList()
@@ -86,6 +95,8 @@ namespace DataStructures.NonPrimitive.Linear.LinkedList
             Append(45);
             Delete(45);
             Print();
+            Console.WriteLine("\nLinked list in reverse");
+            PrintReverse(head);
         }
     }
 }
